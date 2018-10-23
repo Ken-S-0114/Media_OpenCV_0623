@@ -4,7 +4,7 @@
 void ofApp::setup(){
   inputImg.allocate(camWidth, camHeight);
   outputImg.allocate(camWidth, camHeight);
-  inputOfImg.loadImage("hassi.jpeg");
+  inputOfImg.load("kanna.jpeg");
   src_img = ofxCv::toCv(inputOfImg);
   
   Mat grey_image;
@@ -49,6 +49,7 @@ void ofApp::setup(){
 
 //  ofxCv::toOf(grey_image, outputOfImg);
 //  inputOfImg.update();
+
   ofxCv::toOf(src_img, outputOfImg);
   outputOfImg.update();
 }
@@ -60,8 +61,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-//  inputOfImg.draw(0,0,camWidth, camHeight);
-  outputOfImg.draw(0,0,camWidth, camHeight);
+  inputOfImg.draw(0,10,camWidth/2, camHeight/2);
+  outputOfImg.draw(camWidth/2, 10, camWidth/2, camHeight/2);
   
 }
 
